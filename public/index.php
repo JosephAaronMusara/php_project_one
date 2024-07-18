@@ -15,8 +15,9 @@ $files = getTransactionFiles(FILES_PATH);
 $transactions = [];
 foreach ($files as $file) {
 
-    $transactions = array_merge($transactions, getTransactions($file));
+    $transactions = array_merge($transactions, getTransactions($file,'extractTransaction'));
 }
-echo '<pre>';
-print_r($transactions);
-echo '<pre />';
+require VIEWS_PATH ."transactions.php";
+// echo '<pre>';
+// print_r($transactions);
+// echo '<pre />';
